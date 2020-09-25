@@ -17,7 +17,7 @@ class Particle(object):
     def __init__(self, x, y, orien, is_robot=False):
         """pos_x: from left to right
            pos_y: from up to down
-           orientation: [0,2*pi)
+           orientation: [0,2*pi) pi/5
         """
         self.pos_x = x
         self.pos_y = y
@@ -26,7 +26,7 @@ class Particle(object):
         self.is_robot = is_robot
         self.landmarks =[]
         self.set_noise()
-        self.weight = 1.0
+        self.weight = 1.000
         # Model error term will relax the covariance matrix
         self.obs_noise = np.array([[0.1, 0], [0, (3.0*math.pi/180)**2]])
 

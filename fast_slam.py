@@ -15,7 +15,7 @@ class FastSlam(object):
     """Main class that implements the FastSLAM1.0 algorithm"""
     def __init__(self, x, y, orien, particle_size = 50):
         self.world = World()
-        self.particles = [Particle(x, y, random.random()* 2.*math.pi) for i in xrange(particle_size)]
+        self.particles = [Particle(x, y, random.random()* 2.*math.pi) for i in range(particle_size)]
         self.robot = Particle(x, y, orien, is_robot=True)
         self.particle_size = particle_size
 
@@ -58,7 +58,7 @@ class FastSlam(object):
         index = int(random.random() * self.particle_size)
         beta = 0.0
         mw = max(weight)
-        for i in xrange(self.particle_size):
+        for i in range(self.particle_size):
             beta += random.random() * 2.0 * mw
             while beta > weight[index]:
                 beta -= weight[index]
